@@ -17,19 +17,18 @@ Jeweler::Tasks.new do |gem|
   gem.name = "instance-factory"
   gem.homepage = "http://github.com/vgsantoniazzi/instance-factory"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "A gem for create a unique instace of FactoryGirl for associatons"
+  gem.description = "Manage your FactoryGirl for create a unique instance of model associations and integrate with rspec"
   gem.email = "vgsantoniazzi@gmail.com"
   gem.authors = ["Victor Antoniazzi"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+require 'rspec/core'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = 'test/dummy/**/*_spec.rb'
 end
 
 desc "Code coverage detail"
@@ -38,7 +37,7 @@ task :simplecov do
   Rake::Task['test'].execute
 end
 
-task :default => :test
+# task :default => :spec
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
