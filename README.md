@@ -1,7 +1,9 @@
 To include helper on FactoryGirl
-    FactoryGirl::SyntaxRunner.send(:include, FactoryHelpers)
+    
+        FactoryGirl::SyntaxRunner.send(:include, FactoryHelpers)
 
 To include on RSpec and configure for clear all variables after each spec
+    
     RSpec.configure do |config|
       config.include FactoryHelpers
 
