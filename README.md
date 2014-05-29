@@ -13,3 +13,5 @@ To include on RSpec and configure for clear all variables after each spec
     end
 
 So, you can call instance_factory on FactoryGirl factories, or in RSpec.
+
+[![Build Status](https://travis-ci.org/vgsantoniazzi/instance-factory.svg?branch=master)](https://travis-ci.org/vgsantoniazzi/instance-factory)
