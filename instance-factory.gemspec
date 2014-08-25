@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "README.md",
     "README.rdoc",
     "Rakefile",
+    "instance-factory.gemspec",
     "lib/instance_factory.rb",
     "spec/dummy/.gitignore",
     "spec/dummy/.rspec",
