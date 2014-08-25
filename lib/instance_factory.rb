@@ -5,6 +5,10 @@ module InstanceFactory
     return defined_var? ? get_var : set_var
   end
 
+  def instance_factory_clear!
+    InstanceFactoryVariables.clear
+  end
+
   private
 
   def defined_var?
