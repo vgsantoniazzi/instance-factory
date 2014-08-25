@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "instance-factory.gemspec",
     "lib/instance_factory.rb",
+    "lib/version.rb",
     "spec/dummy/.gitignore",
     "spec/dummy/.rspec",
     "spec/dummy/Gemfile",
