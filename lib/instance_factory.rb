@@ -6,7 +6,7 @@ module InstanceFactory
   end
 
   def instance_factory_clear!
-    InstanceFactoryVariables.clear
+    InstanceFactoryVariables.clear!
   end
 
   private
@@ -32,7 +32,7 @@ end
 # Intern class for manage class variables
 #
 class InstanceFactoryVariables
-  def self.clear
+  def self.clear!
     class_variables.each{|var| remove_class_variable(var) }
   end
 end

@@ -1,10 +1,13 @@
 source "http://rubygems.org"
 
 group :development do
-  gem "shoulda", ">= 0"
-  gem "rdoc", "~> 3.12"
-  gem "bundler", "~> 1.0"
-  gem "jeweler", "~> 2.0.1"
-  gem "simplecov", ">= 0"
+  gem "rails"
+  gem "sqlite3"
+  gem "shoulda"
+  gem "rdoc"
+  gem "bundler"
+  gem "jeweler"
+  gem "simplecov"
   gem "rspec-rails"
+  gem 'factory_girl_rails'
 end
