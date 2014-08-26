@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Victor Antoniazzi"]
-  s.date = "2014-08-25"
+  s.date = "2014-08-26"
   s.description = "Manage your FactoryGirl for create a unique instance of model associations and integrate with rspec"
   s.email = "vgsantoniazzi@gmail.com"
   s.extra_rdoc_files = [
@@ -45,7 +45,9 @@ Gem::Specification.new do |s|
     "spec/dummy/app/helpers/application_helper.rb",
     "spec/dummy/app/mailers/.keep",
     "spec/dummy/app/models/.keep",
+    "spec/dummy/app/models/adderess.rb",
     "spec/dummy/app/models/concerns/.keep",
+    "spec/dummy/app/models/user.rb",
     "spec/dummy/app/views/layouts/application.html.erb",
     "spec/dummy/bin/bundle",
     "spec/dummy/bin/rails",
@@ -69,6 +71,9 @@ Gem::Specification.new do |s|
     "spec/dummy/config/locales/en.yml",
     "spec/dummy/config/routes.rb",
     "spec/dummy/config/secrets.yml",
+    "spec/dummy/db/migrate/20140825230522_create_users.rb",
+    "spec/dummy/db/migrate/20140826004447_create_adderesses.rb",
+    "spec/dummy/db/schema.rb",
     "spec/dummy/db/seeds.rb",
     "spec/dummy/lib/assets/.keep",
     "spec/dummy/lib/tasks/.keep",
@@ -78,9 +83,14 @@ Gem::Specification.new do |s|
     "spec/dummy/public/500.html",
     "spec/dummy/public/favicon.ico",
     "spec/dummy/public/robots.txt",
+    "spec/dummy/spec/change_user_between_tests_spec.rb",
+    "spec/dummy/spec/factories/suite.rb",
+    "spec/dummy/spec/mantain_user_on_before_spec.rb",
+    "spec/dummy/spec/should_not_create_another_spec.rb",
+    "spec/dummy/spec/spec_helper.rb",
+    "spec/dummy/spec/support/instance_factory_configuration.rb",
     "spec/dummy/vendor/assets/javascripts/.keep",
-    "spec/dummy/vendor/assets/stylesheets/.keep",
-    "spec/spec_helper.rb"
+    "spec/dummy/vendor/assets/stylesheets/.keep"
   ]
   s.homepage = "http://github.com/vgsantoniazzi/instance-factory"
   s.licenses = ["MIT"]
@@ -91,27 +101,36 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<rails>, [">= 0"])
+      s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 2.0.1"])
+      s.add_development_dependency(%q<rdoc>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_development_dependency(%q<factory_girl_rails>, [">= 0"])
     else
+      s.add_dependency(%q<rails>, [">= 0"])
+      s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, ["~> 1.0"])
-      s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
+      s.add_dependency(%q<rdoc>, [">= 0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_dependency(%q<factory_girl_rails>, [">= 0"])
     end
   else
+    s.add_dependency(%q<rails>, [">= 0"])
+    s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, ["~> 1.0"])
-    s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
+    s.add_dependency(%q<rdoc>, [">= 0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, [">= 0"])
+    s.add_dependency(%q<factory_girl_rails>, [">= 0"])
   end
 end
 
