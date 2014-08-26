@@ -1,7 +1,6 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 
 describe 'mantain same user' do
-
   before do
     @user = instance_factory(:user)
   end

@@ -1,7 +1,6 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 
 describe 'mantain database clear' do
-
   context 'can view @user' do
     before do
       @user = instance_factory(:user)
@@ -18,7 +17,6 @@ describe 'mantain database clear' do
   end
 
   context 'should create user' do
-
     before do
       @adderess = instance_factory(:adderess)
     end
@@ -26,11 +24,9 @@ describe 'mantain database clear' do
     it 'user' do
       expect(@adderess.user).to eq instance_factory(:user)
     end
-
   end
 
   context 'should create user' do
-
     before do
       @adderess = FactoryGirl.create(:adderess)
     end
@@ -38,6 +34,5 @@ describe 'mantain database clear' do
     it 'user' do
       expect(@adderess.user).to eq instance_factory(:user)
     end
-
   end
 end

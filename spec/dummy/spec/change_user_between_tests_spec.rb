@@ -1,7 +1,6 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 
 describe 'mantain database clear' do
-
   context 'can view @user' do
     before do
       @user = instance_factory(:user)
@@ -17,10 +16,8 @@ describe 'mantain database clear' do
   end
 
   context 'cannot view @user' do
-
     it '#count' do
       expect(User.count).to eq(0)
     end
-
   end
 end
