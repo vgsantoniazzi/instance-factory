@@ -1,5 +1,8 @@
 language: ruby
 rvm:
   - 1.9.3
+env:
+  global:
+    - CI_HOME=/$REPO/spec/dummy
 script:
-  - RAILS_ENV=test bundle exec rake test
+  - RAILS_ENV=test bundle exec rake --trace db:migrate spec
