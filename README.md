@@ -23,7 +23,7 @@ class ActiveSupport::TestCase
   include InstanceFactory
 end
 
-before :each do
+after :each do
   instance_factory_clear!
 end
 ```
