@@ -73,12 +73,3 @@ I :heart: Open source!
 ## License
 
 Gem is released under the [MIT license](http://opensource.org/licenses/MIT).
-
-================================================================================
-
-
-
-
-So, you can call instance_factory on , or another.
-
-
